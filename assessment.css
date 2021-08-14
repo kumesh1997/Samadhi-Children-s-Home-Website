@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+body{
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: antiquewhite;
+    background-image: url(q5d9Fsz.png);
+    -webkit-background-size:cover;
+}
+
+.header{
+    background-color: black;
+    color:white;
+    margin-top: 0%;
+    overflow:hidden;
+    display: flex;
+    padding-left: 10px;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+   
+}
+
+
+
+.SideBar{
+    position: fixed;
+    background-color: black;
+     float: left;
+    width: 280px;
+    height:100vh;
+    color:white;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 45px;
+    
+}
+
+nav ul{
+    list-style: none;
+}
+
+
+nav ul li{
+    line-height: 40px;
+    border-bottom: 1px solid aqua;
+    display: block;
+    
+    
+}
+
+
+nav ul li a:hover{
+    color: cyan;
+    
+}
+
+nav ul ul li{
+    line-height: 25px;
+    border-bottom: none;
+    padding-left: 10px;
+    font-family:Montserrat ;
+}
+
+
+nav ul ul li{
+    position: static;
+    display: none;
+}
+
+
+.LogoutBtn{
+    border-bottom: none;
+}
+
+
+#imeageLeft{
+    position: absolute;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px; 
+}
+
+#imgRight{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-top: 6px;
+    
+}
+nav ul li a span{
+    transform: translateY(-50%);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+Button{
+    border:none;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2em;
+}
+
+Button:hover{
+    color: cyan;
+}
+
+#orderedList li{
+    padding-bottom: 10px;
+}
+
+.LogoutBtn{
+    margin-top: 30px;
+}
