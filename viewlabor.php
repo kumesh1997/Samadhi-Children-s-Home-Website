@@ -93,7 +93,7 @@ $result=$conn->query($sql);
         
          <span><img src="whitelogout.png" id="imgRight" style="margin-top: 20px;"></span>
         <ul class="LogoutBtn">
-           <li><button onclick="logoutEvent()">Log Out</button></li>
+            <li><a href="logout.php"><button>Log Out</button></a></li>
         </ul>
         
         

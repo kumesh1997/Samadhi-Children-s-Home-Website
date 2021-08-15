@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 body{
-    font-family: sans-serif;
+    font-family:sans-serif;
     font-weight: 500;
     background-color: antiquewhite;
     background-image: url(q5d9Fsz.png);
@@ -32,7 +32,7 @@ body{
     color:white;
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 45px;
+    margin-top: 40px;
     
 }
 
@@ -104,10 +104,13 @@ Button{
     color: white;
     font-family: sans-serif;
     font-size: 1.2em;
+    
+    
 }
 
 Button:hover{
     color: cyan;
+    
 }
 
 #orderedList li{
@@ -116,4 +119,35 @@ Button:hover{
 
 .LogoutBtn{
     margin-top: 30px;
+}
+
+#anchor{
+    text-decoration: none;
+    text-decoration-line: none;
+    color: white;
+    
+}
+
+#anchor:active{
+    color: cyan;
+}
+
+
+aside nav ul li a{
+     font-family:Montserrat;
+}
+
+header div h3{
+     font-family:sans-serif;
+     
+}
+
+
+aside nav ul li a Button{
+     font-family:sans-serif;
+}
+
+
+aside nav ul li Button{
+     font-family:sans-serif;
 }

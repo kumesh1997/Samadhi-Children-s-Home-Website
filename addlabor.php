@@ -22,8 +22,8 @@ if(isset($_POST['submit'])){
         echo "Labor Added Successfully ";
             header("location:viewlabor.php");
     }else{
-        alert("OOPS!! Something went Wrong!!");
-        //echo "Error".$sql."<br>".$conn->error;
+        
+        echo "Error".$sql."<br>".$conn->error;
     }
 }
 
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
    <title>Add Labour</title>
     <link rel="stylesheet" type="text/css" href="AddChildForm.css">
     <link rel="stylesheet" type="text/css" href="assessment.css">
-   
+     <link rel="stylesheet" href="css/bootstrap.css">
     
       <script>
     
@@ -189,7 +189,7 @@ if(isset($_POST['submit'])){
         
          <span><img src="whitelogout.png" id="imgRight" style="margin-top: 20px;"></span>
         <ul class="LogoutBtn">
-           <li><button onclick="logoutEvent()">Log Out</button></li>
+            <li><a href="logout.php"><button>Log Out</button></a></li>
         </ul>
         
         
