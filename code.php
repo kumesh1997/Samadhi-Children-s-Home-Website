@@ -1,9 +1,10 @@
-
+ 
 
 
 <?php 
 
 include "config.php";
+include "security.php";
 
 if(isset($_POST['submit'])){
     $username=$_POST['username'];
@@ -14,18 +15,11 @@ if(isset($_POST['submit'])){
     $result=$conn->query($sql);
     if($result==TRUE){
         $_SESSION['username']=$username;
-        $_SESSION['password']=$pw;
+       
         header("location:overview.php");
     }else{
-       header("location:login.php");
+       header("location:overview.php");
     }
-}
-
-
-
-if(isset($_POST['logout_btn'])){
-    session_destroy();
-    unset($_SESSION['username']);
 }
 
 

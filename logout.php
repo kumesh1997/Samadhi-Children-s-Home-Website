@@ -1,6 +1,8 @@
 <?php
-   if(isset($_POST['logout_btn'])){
-    session_destroy();
-    unset($_SESSION['username']);
-}
+
+session_start();
+
+session_destroy();
+echo "<script>window.open('login.php','_self')</script>";
+
 ?>

@@ -7,9 +7,10 @@ if(isset($_POST['submit'])){
     $contact=$_POST['contact'];
     $address=$_POST['textarea'];
     $type=$_POST['type'];
+    $donation=$_POST['donation'];
     
     //sql query
-    $mysql="INSERT INTO donation(donarName,contact,address,type) VALUE('$donname','$contact','$address','$type');";
+    $mysql="INSERT INTO donation(donarName,contact,address,type,donateAmount) VALUE('$donname','$contact','$address','$type','$donation');";
     
     //Execution
     $result=$conn->query($mysql);
@@ -35,7 +36,7 @@ if(isset($_POST['submit'])){
    <title>Add Donation</title>
     <link rel="stylesheet" type="text/css" href="AddChildForm.css">
     <link rel="stylesheet" type="text/css" href="assessment.css">
-   
+     <link rel="stylesheet" href="css/bootstrap.css">
     
       <script>
     
@@ -151,7 +152,7 @@ if(isset($_POST['submit'])){
         
          <span><img src="whitelogout.png" id="imgRight" style="margin-top: 20px;"></span>
         <ul class="LogoutBtn">
-           <li><button onclick="logoutEvent()">Log Out</button></li>
+            <li><a href="logout.php"><button onclick="">Log Out</button></a></li>
         </ul>
         
         
@@ -250,7 +251,11 @@ if(isset($_POST['submit'])){
                <textarea id="address" name="textarea" rows="5" cols="20"></textarea>
             </div>
             
+            <div class="innerDiv">
+                <label for="donation">Amount (Rs:)</label><br>
+                <input type="text" id="donation" name="donation">
             
+            </div>
             
             <div class="innerDiv">
                 <label for="type">Donation Type</label><br>

@@ -47,7 +47,7 @@ if(isset($_GET['id'])){
         $image=$_POST['image'];
 
 //sql query
-$sqlquery="UPDATE staff SET firstName='$firstNameUpdate', lastName='$lastNameUpdate', initialName='$initname',dod='$dob',gender='$genderUpdate',address='$address',email='$emailupdate',post='$post',image='$image',contact='$contact',image='image' WHERE nic='$userId'";
+$sqlquery="UPDATE staff SET firstName='$firstNameUpdate', lastName='$lastNameUpdate', initialName='$initname',dob='$dob',gender='$genderUpdate',address='$address',email='$emailupdate',post='$post',image='$image',contact='$contact',image='image' WHERE nic='$userId'";
 
 $result=$conn->query($sqlquery);
 
@@ -267,7 +267,7 @@ if($result==TRUE){
         
          <span><img src="whitelogout.png" id="imgRight" style="margin-top: 20px;"></span>
         <ul class="LogoutBtn">
-           <li><button onclick="logoutEvent()">Log Out</button></li>
+            <li><a href="logout.php"><button>Log Out</button></a></li>
         </ul>
         
         

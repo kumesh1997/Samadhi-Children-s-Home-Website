@@ -1,7 +1,7 @@
 <?php 
 include "config.php";
 
-$sqldonation="SELECT COUNT(donarId) AS count FROM donation;";
+$sqldonation="SELECT SUM(donateAmount) AS count FROM donation;";
 $sqlstaff="SELECT COUNT(nic) AS count FROM staff;";
 $sqlchild="SELECT COUNT(id) AS count FROM child;";
 $sqllabor="SELECT COUNT(id) AS count FROM labor;";
@@ -49,7 +49,7 @@ $laborresult=$conn->query($labordsql);
     
   <header class="header">
     <div>
-      <h2>SAMADHI CHILDREN HOME</h2>
+      <h3>SAMADHI CHILDREN HOME</h3>
       </div>
       
       
@@ -58,7 +58,6 @@ $laborresult=$conn->query($labordsql);
     </header>
     
     <aside class="SideBar">
-    
     <nav>
         <span><img src="overview.png" id="imgRight"></span>
     <ul>
@@ -69,48 +68,48 @@ $laborresult=$conn->query($labordsql);
         
        <span><img src="donation.png" id="imgRight"></span> 
     <ul>
-        <li class="donation"> <button onclick="donationView()">Donation
+        <li class="donation"> <button onclick="donationView()" id="anchor">Donation
             <span><img src="whitearrow.png" id="imeageLeft"></span>
             </button>
             <ul>
-                <li id="viewList1"><a href="adddonation.php">Add Donation</a></li> 
-                <li id="viewList2"><a href="viewdonation.php">View Donation</a></li> 
+                <li id="viewList1"><a href="adddonation.php" id="anchor">Add Donation</a></li> 
+                <li id="viewList2"><a href="viewdonation.php" id="anchor">View Donation</a></li> 
             </ul>    
         </li>    
     </ul>   
         
         <span><img src="staff.png" id="imgRight"></span>
     <ul>
-        <li><button onclick="staffView()">Staff
+        <li><button onclick="staffView()" id="anchor">Staff
             <span><img src="whitearrow.png" id="imeageLeft"></span>
             </button>
             <ul>
-                <li id="viewList3"><a href="addstaff.php">Add Staff</a></li> 
-                <li id="viewList4"><a href="viewstaff.php">View Staff</a></li> 
+                <li id="viewList3"><a href="addstaff.php" id="anchor">Add Staff</a></li> 
+                <li id="viewList4"><a href="viewstaff.php" id="anchor">View Staff</a></li> 
             </ul>    
         </li>    
     </ul>
         
         <span><img src="child.png" id="imgRight"></span>
     <ul>
-        <li> <button onclick="childView()">Child
+        <li> <button onclick="childView()" id="anchor">Child
             <span><img src="whitearrow.png" id="imeageLeft"></span>
             </button>
             <ul>
-                <li id="viewList5"><a href="addchild.php">Add Child</a></li> 
-                <li id="viewList6"><a href="viewchild.php">View Child</a></li> 
+                <li id="viewList5"><a href="addchild.php" id="anchor">Add Child</a></li> 
+                <li id="viewList6"><a href="viewchild.php" id="anchor">View Child</a></li> 
             </ul>    
         </li>    
     </ul>
         
         <span><img src="labor.png" id="imgRight"></span>
         <ul>
-        <li><button onclick="laborView()">Labor
+        <li><button onclick="laborView()" id="anchor">Labor
             <span><img src="whitearrow.png" id="imeageLeft"></span>
             </button>
             <ul>
-                <li id="viewList7"><a href="addlabor.php">Add Labor</a></li> 
-                <li id="viewList8"><a href="viewlabor.php">View Labor</a></li> 
+                <li id="viewList7"><a href="addlabor.php" id="anchor">Add Labor</a></li> 
+                <li id="viewList8"><a href="viewlabor.php" id="anchor">View Labor</a></li> 
                 <li id="viewList9">View Labor Salary</li> 
             </ul>    
         </li>    
@@ -118,13 +117,14 @@ $laborresult=$conn->query($labordsql);
         
          <span><img src="whitelogout.png" id="imgRight" style="margin-top: 20px;"></span>
         <ul class="LogoutBtn">
-            <li><a href="#" data-toggle="modal" data-target="#logoutModal"><button onclick=" ">Log Out</button></a></li>
+            <li><a href="logout.php"><button onclick="" id="anchor">Log Out</button></a></li>
+            
+            
         </ul>
         
         
     </nav>
     </aside>
-   
     
     
     <script>
@@ -204,7 +204,7 @@ $laborresult=$conn->query($labordsql);
                     </div>
                     <div class="col-sm">
                         <p style="font-weight: bold;">Total Donations:</p>
-                        <h3><?php echo $resultdonation->fetch_assoc()['count']; ?></h3>
+                        <p style="font-weight: bold;"><?php echo "Rs. ".$resultdonation->fetch_assoc()['count']; ?></p>
                     </div>    
           </div>
         </div>
@@ -223,7 +223,7 @@ $laborresult=$conn->query($labordsql);
                     </div>
                     <div class="col-sm">
                         <P style="font-weight: bold;">Total Staff Members:</P>
-                      <h3><?php echo $resultstaff->fetch_assoc()['count']; ?></h3>
+                      <h5><?php echo $resultstaff->fetch_assoc()['count']; ?></h5>
                     </div>    
           </div>
         </div>
@@ -243,7 +243,7 @@ $laborresult=$conn->query($labordsql);
                     </div>
                     <div class="col-sm">
                         <p style="font-weight: bold;">Total Childern:</p>
-                      <h3><?php echo $resultchild->fetch_assoc()['count']; ?></h3>
+                      <h5><?php echo $resultchild->fetch_assoc()['count']; ?></h5>
                     </div>    
           </div>
         </div>
@@ -265,7 +265,7 @@ $laborresult=$conn->query($labordsql);
                     </div>
                     <div class="col-sm">
                         <p style="font-weight: bold;">Total Labors:</p>
-                     <h3><?php echo $resultlabor->fetch_assoc()['count']; ?></h3>
+                     <h5><?php echo $resultlabor->fetch_assoc()['count']; ?></h5>
                     </div>    
           </div>
         </div>
@@ -280,6 +280,8 @@ $laborresult=$conn->query($labordsql);
 <!-- Replace Code Above-->
    
     <div class="container" style="margin-top:50px;">
+    
+    
   <div class="row" style="margin-bottom:25px;">
    
    
@@ -300,7 +302,7 @@ $laborresult=$conn->query($labordsql);
             <th>Address</th>
             <th>Email</th>
             <th>Post</th>
-            <th>Action</th>
+            
         </tr>
         </thead>
         
@@ -358,7 +360,7 @@ $laborresult=$conn->query($labordsql);
             <th>Full Name</th>
             <th>Date of Birth</th>
             <th>Gender</th>
-            <th>Action</th>
+           
         </tr>
         </thead>
         
@@ -419,7 +421,7 @@ $laborresult=$conn->query($labordsql);
             <th>Contact</th>
             <th>Address</th>
             <th>Company</th>
-            <th>Action</th>
+           
         </tr>
         </thead>
         
@@ -480,10 +482,9 @@ $laborresult=$conn->query($labordsql);
               <div class="modal-footer">
                   <button class="btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                   
-                  <form action="code.php" method="POST">
+                  <form action="logout.php" method="POST">
                      <button type="submit" name="logout_btn" class="btn btn-primary">Logout</button>
                    
-                  <button type="submit" name="logout_btn"class="btn btn-primary" href="login.php" >Logout</button>
                      
                   </form>
                   
